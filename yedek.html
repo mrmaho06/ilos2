@@ -1,0 +1,286 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>İlayda Nur Tekeli</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Template by FreeHTML5.co" />
+	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FreeHTML5.co" />
+
+  
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Simple Line Icons -->
+	<link rel="stylesheet" href="css/simple-line-icons.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<!-- Style -->
+	<link rel="stylesheet" href="css/style.css">
+
+
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-KW9R5KRTLC"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-KW9R5KRTLC');
+	</script>
+	</head>
+	<body>
+	<header role="banner" id="fh5co-header">
+		<div class="fluid-container">
+			<nav class="navbar navbar-default navbar-fixed-top js-fullheight">
+				<div id="navbar" class="navbar-collapse js-fullheight">
+					<ul class="nav navbar-nav navbar-left">
+						<li class="active"><a href="#" data-nav-section="home"><span>Home</span></a></li>
+						<li><a href="#" data-nav-section="services"><span>Services</span></a></li>
+						<li><a href="#" data-nav-section="explore"><span>Project</span></a></li>
+						<li><a href="#" data-nav-section="pricing"><span>Pricing</span></a></li>
+						<li><a href="#" data-nav-section="team"><span>Team</span></a></li>
+					</ul>
+				</div>
+			</nav>
+	  </div>
+	</header>
+
+	<section id="fh5co-home" data-section="home" style="background-image: url(images/full_image_1.jpg);" data-stellar-background-ratio="0.5">
+		<div class="gradient"></div>
+		<div class="container">
+			<div class="text-wrap">
+				<div class="text-inner">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 text-center">
+							<h1 class="to-animate">İlayda Nur Tekeli</h1>
+								<a href="https://tiyatrolar.com.tr/ilayda-nur-tekeli"><p>Tiyatroyu severim.</p></a>
+
+								<h3>8 Saniyede Bir Doz</h3>
+								<!--<input type="button" onClick="displayImg()" value="Display Random Image">-->
+								<label id="minutes">00</label>:<label id="seconds">00</label>
+									<br>
+									<img src="images/muho.gif" name="canvas">
+								
+								</body>
+								<script>
+									var imgArr = [];
+									for (let i = 1; i < 166; i++) {
+									imgArr.push(i+'.JPG')
+								}
+								
+								
+								
+								var minutesLabel = document.getElementById("minutes");
+								var secondsLabel = document.getElementById("seconds");
+								var totalSeconds = 0;
+								setInterval(setTime, 996);
+								
+								function setTime() {
+								  ++totalSeconds;
+								  secondsLabel.innerHTML = pad(totalSeconds % 60);
+								  minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+								  if(totalSeconds==8){
+									var num = Math.floor(Math.random() * (imgArr.length));
+									document.canvas.src="img/"+imgArr[num];
+									totalSeconds = 0;
+								  }
+								}
+								
+								function pad(val) {
+								  var valString = val + "";
+								  if (valString.length < 2) {
+									return "0" + valString;
+								  } else {
+									return valString;
+								  }
+								}
+								
+								
+								///function displayImg(){
+									///var num = Math.floor(Math.random() * (imgArr.length));
+									///document.canvas.src="img/"+imgArr[num];
+								///}
+								</script>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+
+	<section id="fh5co-explore" data-section="explore">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 section-heading text-center">
+					<h2 class="to-animate">Dünyanın 8. Harikası:</h2>
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 subtext to-animate">
+							<h3><a href="https://www.instagram.com/ilaydanurtekeli/?hl=tr">İloş</a></h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="fh5co-project">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<div alt="ilayda nur tekeli" class="project-grid to-animate-2" style="background-image:  url(images/project-1.jpg);">
+							<div class="desc">
+								<h3>05.05.1997</h3>
+								<span>:)</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 text-center">
+						<div alt="ilayda nur tekeli" class="project-grid to-animate-2" style="background-image:  url(images/project-2.jpg);">
+							<div class="desc">
+								<h3>09.02.2020</h3>
+								<span>Kotor</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 text-center">
+						
+					</div>
+					<div class="col-md-12 text-center">
+						<div alt="ilayda nur tekeli" class="project-grid to-animate-2" style="background-image:  url(images/project-4.jpg);">
+							<div class="desc">
+								<h3>Hacettepe Üniversitesi</h3>
+								<span>22.10.2021</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 text-center">
+						<div class="project-grid to-animate-2" style="background-image:  url(images/project-5.jpg);">
+							<div class="desc">
+								<h3>Batıkent</h3>
+								<span>29.01.2022</span>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>	
+		</div>
+	</section>
+	
+	
+
+	<section id="fh5co-team" data-section="team">
+		<div class="fh5co-team">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 section-heading text-center">
+						<h2 class="to-animate">Arkadaşlarım</h2>
+						<div class="row">
+							
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="team-box text-center to-animate-2">
+							<div class="user"><img class="img-reponsive" src="images/user-1.jpg" alt="Roger Garfield"></div>
+							<h3>Zülal Şeyma Görür</h3>
+							<span class="position"></span>
+							<p>Akrep burcu ama yılan. Şu ana kadar gelmiş geçmiş en iyi GPS satıcısı.</p>
+							<ul class="social-media">
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="team-box text-center to-animate-2">
+							<div class="user"><img class="img-reponsive" src="images/user-2.jpg" alt="Roger Garfield"></div>
+							<h3>Cansu Oğuzhan</h3>
+							<span class="position"></span>
+							<p>Cansu ama ben Kansu diyorum. En çok çıldırttığım arkadaşım olabilir.</p>
+							<ul class="social-media">
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="team-box text-center to-animate-2">
+							<div class="user"><img class="img-reponsive" src="images/user-3.jpg" alt="Roger Garfield"></div>
+							<h3>Atoş</h3>
+							<span class="position"></span>
+							<p>:)</p>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			<div class="image-container">
+				<div class="video-wrapper">
+					<span class="video-play-button">
+					<a class="popup-youtube" href="https://youtu.be/J7Q_ATb51UY?t=41">
+						<img src="images/play-button.png"  width="150px" height="150px"></span>
+						</span>
+					</a>
+			</div> 
+			<style>
+			.image-container {
+				display: flex;
+				justify-content: center;
+			  }</style>
+		</div>
+	</section>
+
+
+	
+	<!-- <div id="map" class="fh5co-map"></div> -->
+
+	
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Stellar Parallax -->
+	<script src="js/jquery.stellar.min.js"></script>
+	<!-- Counters -->
+	<script src="js/jquery.countTo.js"></script>
+	<!-- Main JS (Do not remove) -->
+	<script src="js/main.js"></script>
+
+	</body>
+</html>
+

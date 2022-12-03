@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+	<!--font style start-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+	<!--font style end-->
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>İloş</title>
+	<style>
+		
+		body {
+			font-family: 'Permanent Marker', cursive;
+			text-align: center;
+			color: black;
+			background-color: #D95550;
+		}
+
+		input {
+			width: 120px;
+		}
+	</style>
+</head>
+
+<body style="margin:30px;">
+	<div class="container">
+		<div class="row">
+			<div class="col-sm">
+					<h1>İloş'un Günlüğü</h1>
+
+					<h4>Linki Gir İloş</h4>
+					<input class="form-control" id="enterID" type="text">
+
+					<h4>Varsa Mesaj :)</h4>
+					<input class="form-control" id="enterName" type="text"><br>
+
+					<!-- <h4>Age</h4>
+					<input  class="form-control" id="enterAge" type="text">  -->
+
+					<button id="insert" class="btn btn-success">Gönder</button><br><br>
+					<!-- <button id="update" class="btn btn-success">UPDATE</button>
+					<button id="remove" class="btn btn-danger">REMOVE</button> <br><br> -->
+			</div>
+		</div>
+		<div class="container">
+			<div class="row">
+				<div class="col-sm">
+					<div id="findDetails">
+						<h1>KAYDEDİLENLER</h1>
+						<h3 id="findID2" type="text"></h3>
+						<h3 id="findName" type="text"></h3>
+						<h3 id="findAge" type="text"></h3> <br><br>
+						 <br><br>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+
+
+		<script type="module">
+
+			// Import the functions you need from the SDKs you need
+			import { initializeApp } from "https://www.gstatic.com/firebasejs/9.9.4/firebase-app.js";
+			// TODO: Add SDKs for Firebase products that you want to use
+			// https://firebase.google.com/docs/web/setup#available-libraries
+
+			// Your web app's Firebase configuration
+			const firebaseConfig = {
+				apiKey: "AIzaSyBRtAmdg5iVKwswFjpQEjw73cthsVAFwPA",
+				authDomain: "ilayda-ed388.firebaseapp.com",
+				databaseURL:
+					"https://ilayda-ed388-default-rtdb.europe-west1.firebasedatabase.app",
+				projectId: "ilayda-ed388",
+				storageBucket: "ilayda-ed388.appspot.com",
+				messagingSenderId: "442113532110",
+				appId: "1:442113532110:web:d924b104431a37bc9c309f",
+			};
+
+			// Initialize Firebase
+			const app = initializeApp(firebaseConfig);
+
+
+
+			import { getDatabase, ref, get, set, child, update, remove }
+				from "https://www.gstatic.com/firebasejs/9.9.4/firebase-database.js";
+
+
+			const db = getDatabase();
+
+			var enterID = document.querySelector("#enterID");
+			var enterName = document.querySelector("#enterName");
+			var enterAge = document.querySelector("#enterAge");
+			var findID = document.querySelector("#findID");
+			var findID2 = document.querySelector("#findID2");
+			var findName = document.querySelector("#findName");
+			var findAge = document.querySelector("#findAge");
+
+
+			var insertBtn = document.querySelector("#insert");
+			var updateBtn = document.querySelector("#update");
+			var removeBtn = document.querySelector("#remove");
+			var findBtn = document.querySelector("#find");
+
+			function InsertData() {
+				set(ref(db, "People/" + enterName.value), {
+					Name: enterName.value,
+					ID: enterID.value
+				})
+					.then(() => {
+						alert("Gönderildi İloşum <3");
+
+
+						const dbref = ref(db);
+
+						get(child(dbref, "People/" + enterName.value))
+							.then((snapshot) => {
+								if (snapshot.exists()) {
+									findID2.innerHTML = enterID.value;
+									findName.innerHTML = "İloştan Atoş'a: " + enterName.value;
+								} else {
+									alert("Geçersiz işlem iloş :'( ");
+								}
+							})
+							.catch((error) => {
+								alert(error)
+							})
+
+
+					})
+					.catch((error) => {
+						alert(error);
+					});
+			}
+
+			
+
+			
+
+			
+
+			insertBtn.addEventListener('click', InsertData);
+
+		</script>
+</body>
+
+</html>

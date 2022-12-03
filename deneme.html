@@ -1,0 +1,335 @@
+
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+	<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>İlayda Nur Tekeli</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="description" content="Free HTML5 Template by FreeHTML5.co" />
+	<meta name="keywords" content="free html5, free template, free bootstrap, html5, css3, mobile first, responsive" />
+	<meta name="author" content="FreeHTML5.co" />
+
+  
+
+  	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+
+	<!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+	<link rel="shortcut icon" href="favicon.ico">
+
+	<link href="https://fonts.googleapis.com/css?family=Inconsolata:400,700" rel="stylesheet">
+	
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Simple Line Icons -->
+	<link rel="stylesheet" href="css/simple-line-icons.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+	<!-- Style -->
+	<link rel="stylesheet" href="css/style.css">
+
+
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+	<!-- Global site tag (gtag.js) - Google Analytics -->
+	<script async src="https://www.googletagmanager.com/gtag/js?id=G-KW9R5KRTLC"></script>
+	<script>
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+
+	gtag('config', 'G-KW9R5KRTLC');
+	</script>
+	</head>
+	<body>
+	<header role="banner" id="fh5co-header">
+		<div class="fluid-container">
+			<nav class="navbar navbar-default navbar-fixed-top js-fullheight">
+				<div id="navbar" class="navbar-collapse js-fullheight">
+					<ul class="nav navbar-nav navbar-left">
+						<li class="active"><a href="#" data-nav-section="home"><span>Home</span></a></li>
+						<li><a href="#" data-nav-section="services"><span>Services</span></a></li>
+						<li><a href="#" data-nav-section="explore"><span>Project</span></a></li>
+						<li><a href="#" data-nav-section="pricing"><span>Pricing</span></a></li>
+						<li><a href="#" data-nav-section="team"><span>Team</span></a></li>
+					</ul>
+				</div>
+			</nav>
+	  </div>
+	</header>
+
+	<section id="fh5co-home" data-section="home" style="background-image: url(images/full_image_1.jpg);" data-stellar-background-ratio="0.5">
+		<div class="gradient"></div>
+		<div class="container">
+			<div class="text-wrap">
+				<div class="text-inner">
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 text-center">
+							<h1 class="to-animate">İlayda Nur Tekeli</h1>
+								<a href="https://tiyatrolar.com.tr/ilayda-nur-tekeli"><p>Tiyatroyu severim.</p></a>
+
+								<h3>8 Saniyede Bir Doz</h3>
+								<!--<input type="button" onClick="displayImg()" value="Display Random Image">-->
+								<label id="minutes">00</label>:<label id="seconds">00</label>
+									<br>
+									<img src="images/muho.gif" name="canvas">
+								
+								</body>
+								<script>
+									
+
+									var imgArr = [];
+									for (let i = 1; i < 166; i++) {
+									imgArr.push(i+'.JPG')
+								}
+								
+								
+								
+								
+								var minutesLabel = document.getElementById("minutes");
+								var secondsLabel = document.getElementById("seconds");
+								var totalSeconds = 0;
+								setInterval(setTime, 996);
+								
+
+								function setTime() {
+								  ++totalSeconds;
+								  secondsLabel.innerHTML = pad(totalSeconds % 60);
+								  minutesLabel.innerHTML = pad(parseInt(totalSeconds / 60));
+								  if(totalSeconds==8){
+									var num = Math.floor(Math.random() * (imgArr.length));
+									document.canvas.src="img/"+imgArr[num];
+									totalSeconds = 0;
+								  }
+								  
+								}
+								
+								function pad(val) {
+								  var valString = val + "";
+								  if (valString.length < 2) {
+									return "0" + valString;
+								  } else {
+									return valString;
+								  }
+								}
+								
+								
+								///function displayImg(){
+									///var num = Math.floor(Math.random() * (imgArr.length));
+									///document.canvas.src="img/"+imgArr[num];
+								///}
+								</script>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</section>
+	
+
+	<section id="fh5co-explore" data-section="explore">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-12 section-heading text-center">
+					<h2 class="to-animate">Dünyanın 8. Harikası:</h2>
+					<div class="row">
+						<div class="col-md-8 col-md-offset-2 subtext to-animate">
+							<h3><a href="https://www.instagram.com/ilaydanurtekeli/?hl=tr">İloş</a></h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="fh5co-project">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 text-center">
+						<div alt="ilayda nur tekeli" class="project-grid to-animate-2" style="background-image:  url(images/project-1.jpg);">
+							<div class="desc">
+								<h3>05.05.1997</h3>
+								<span>:)</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 text-center">
+						<div alt="ilayda nur tekeli" class="project-grid to-animate-2" style="background-image:  url(images/project-2.jpg);">
+							<div class="desc">
+								<h3>09.02.2020</h3>
+								<span>Kotor</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 text-center">
+						
+					</div>
+					<div class="col-md-12 text-center">
+						<div alt="ilayda nur tekeli" class="project-grid to-animate-2" style="background-image:  url(images/project-4.jpg);">
+							<div class="desc">
+								<h3>Hacettepe Üniversitesi</h3>
+								<span>22.10.2021</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 text-center">
+						<div class="project-grid to-animate-2" style="background-image:  url(images/project-5.jpg);">
+							<div class="desc">
+								<h3>Batıkent</h3>
+								<span>29.01.2022</span>
+							</div>
+						</div>
+					</div>
+					
+				</div>
+			</div>	
+		</div>
+	</section>
+	
+	
+
+	<section id="fh5co-team" data-section="team">
+		<div class="fh5co-team">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 section-heading text-center">
+						<h2 class="to-animate">Arkadaşlarım</h2>
+						<div class="row">
+							
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4">
+						<div class="team-box text-center to-animate-2">
+							<div class="user"><img class="img-reponsive" src="images/user-1.jpg" alt="Roger Garfield"></div>
+							<h3>Zülal Şeyma Görür</h3>
+							<span class="position"></span>
+							<p>Akrep burcu ama yılan. Şu ana kadar gelmiş geçmiş en iyi GPS satıcısı.</p>
+							<ul class="social-media">
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="team-box text-center to-animate-2">
+							<div class="user"><img class="img-reponsive" src="images/user-2.jpg" alt="Roger Garfield"></div>
+							<h3>Cansu Oğuzhan</h3>
+							<span class="position"></span>
+							<p>Cansu ama ben Kansu diyorum. En çok çıldırttığım arkadaşım olabilir.</p>
+							<ul class="social-media">
+							</ul>
+						</div>
+					</div>
+
+					<div class="col-md-4">
+						<div class="team-box text-center to-animate-2">
+							<div class="user"><img class="img-reponsive" src="images/user-3.jpg" alt="Roger Garfield"></div>
+							<h3>Atoş</h3>
+							<span class="position"></span>
+							<p>:)</p>
+						</div>
+						
+					</div>
+				</div>
+			</div>
+			
+			  <div class="image-container">
+				<div class="video-wrapper">
+				  <span class="video-play-button">
+				  <a id ="abc" class="popup-youtube" href="https://youtu.be/J7Q_ATb51UY?t=41" onclick="randomSite();" target="_blank">
+					<img src="images/play-button.png"  width="150px" height="150px"></span>
+					</span>
+				  </a>
+			  </div> 
+			  <script>
+
+var links = [
+    "https://youtu.be/UaDd1584sXQ?t=60","https://youtu.be/u44FvcsCNKI?t=53","https://youtu.be/Cg16C85FyEQ?t=27","https://youtu.be/UHmn1U-4ovQ?t=60",
+"https://youtu.be/S6GY8ujeepY?t=57","https://youtu.be/QhkP53JgkZg?t=42","https://youtu.be/6pr6D5v_hz8?t=48","https://youtu.be/lOGp0PiWAuo?t=76",
+"https://youtu.be/niXpRSA34KY?t=87","https://youtu.be/PXw49brYXUQ?t=48","https://youtu.be/cpp69ghR1IM?t=114","https://youtu.be/LJ9FpMXJmwY?t=156",
+"https://youtu.be/PEqL94bN2l0?t=101","https://www.youtube.com/watch?v=tC31iyis1uM&ab_channel=zeynepdizdarVEVO","https://youtu.be/slTJhCBXUpQ",
+"https://youtu.be/qol0bBbcm44?t=46","https://youtu.be/eFRlKvi4Scw?t=66","https://youtu.be/sYOrn71UQMg?t=26","https://youtu.be/R6FXNUcf6E4?t=62",
+"https://youtu.be/I1GBBxURGEQ?t=80","https://youtu.be/6ahjwoNB01c?t=148","https://youtu.be/MWRGrpFmeMA","https://youtu.be/bGDbgvqTaxg?t=60",
+"https://youtu.be/7I3h7czMJeI?t=51","https://youtu.be/MDKucX4as98?t=38","https://youtu.be/quhfPfyIew0?t=61","https://youtu.be/F-AVZUpxTtQ?t=66",
+"https://youtu.be/cx2i_r1F7ts?t=12","https://youtu.be/w_kkd3Jns1E?t=112","https://youtu.be/SCZgGVqVsbY?t=144","https://youtu.be/G81e4utp3Mo?t=65",
+"https://youtu.be/neJgG_Qmm80?t=44","https://youtu.be/7W-NP6oM7-c?t=49","https://youtu.be/iC8pSeoHphI?t=53","https://youtu.be/OlhT_e8l07A?t=59",
+"https://youtu.be/HhucJr-9MCk?t=56","https://youtu.be/OdUbJRqW4zo?t=107","https://youtu.be/F0pDmCSwYPs?t=93","https://youtu.be/-vebb9WNURE?t=45",
+"https://youtu.be/fuOgPU10THA?t=130","https://youtu.be/G0igyZgfr0M?t=75","https://youtu.be/C4dTdlfI4mE?t=55","https://youtu.be/IL8Fegc3VtY?t=44",
+"https://youtu.be/7dqBxDbbZRU?t=50","https://youtu.be/_fTE4NFEPI0?t=44","https://youtu.be/CIGqLHYivvo?t=69","https://youtu.be/GB5J_2jWxMQ?t=143",
+"https://youtu.be/N0ZomDbXKjc?t=72","https://youtu.be/1I0dfmqcbRE?t=9","https://youtu.be/-8cFfkyk7vA?t=48","https://youtu.be/mvYirwZPTgI",
+"https://youtu.be/_WT4YlGfrJI?t=29","https://youtu.be/9MplNcPQrAs?t=71","https://youtu.be/4-lwOhfUMy8?t=4","https://youtu.be/gI21_gvRltg?t=38",
+"https://youtu.be/lYQ0LME3Tqc?t=36","https://youtu.be/K6Km8OavCmw?t=62","https://youtu.be/hKr0XmNhQzY?t=79","https://youtu.be/0-SCNDwGcgE?t=47",
+"https://youtu.be/C9QWjVf0S4M?t=71","https://youtu.be/dUM07Obw0Lo?t=109","https://youtu.be/dPNj8kJP31A?t=2","https://youtu.be/_Qw1l1BbJwM?t=71",
+"https://youtu.be/veMliSBk9sk?t=58","https://youtu.be/fH6bDZCv7nk?t=57","https://youtu.be/CJHuLPHdRiw?t=139","https://youtu.be/bgKF-jZ5sTY?t=79",
+"https://youtu.be/Q6V2llDT5QA?t=76","https://youtu.be/oL7nN4gUnTc?t=74","https://youtu.be/-jDEFIRkeg4?t=17","https://youtu.be/QQ2lGwCWd_o?t=93",
+"https://youtu.be/ZcoQ6pnLpS4?t=76","https://youtu.be/rtw-8txXO6A?t=184","https://youtu.be/TyfX4MvoogU?t=38","https://youtu.be/XnVGm6aQlvE?t=113",
+"https://youtu.be/3hY0lxS-Nbw?t=5","https://youtu.be/Ik7GyzkGUcg?t=79","https://youtu.be/jeoEdQJNZqY?t=59"]
+function my_function(){
+	
+	var now = new Date();
+	var hour = now.getHours();
+	var minutes = now.getMinutes();
+	var thesecond= now.getSeconds();
+
+	
+
+	if(new String(hour).valueOf() == "0"  && new String(thesecond).valueOf()=="0"){
+									console.log("hereherereererer")
+								var num = Math.floor(Math.random() * (links.length));
+								document.getElementById("abc").href=links[num];
+								  }
+};
+setInterval(my_function,10000);
+								
+
+								
+			  </script>
+			<style>
+			.image-container {
+				display: flex;
+				justify-content: center;
+			  }</style>
+		</div>
+	</section>
+
+
+	
+	<!-- <div id="map" class="fh5co-map"></div> -->
+
+	
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Stellar Parallax -->
+	<script src="js/jquery.stellar.min.js"></script>
+	<!-- Counters -->
+	<script src="js/jquery.countTo.js"></script>
+	<!-- Main JS (Do not remove) -->
+	<script src="js/main.js"></script>
+
+	</body>
+</html>
+

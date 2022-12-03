@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>İloş'un Listesi</title>
+<meta name="viewport" content="user-scalable=no,width=device-width"/>
+<link rel="stylesheet" type="text/css" href="css/bootstrap.css">
+
+</head>
+<body style="margin:30px">
+<!--
+	How to View Web SQL data:
+0. Run the source code above on your browser
+1. Press Ctrl + Shift + I
+2. Click on "Application" tab
+3. Double click on "Web SQL" then click on itemDB (name of our database)
+-->
+
+<div class="container">
+	
+<div class="row">
+<form>
+	<fieldset>
+		<legend>Linki Gir İloş</legend>
+		<input type="text" class="form-control" name="" id="item" placeholder="https://youtube.com/vesaire...">
+
+		<legend>Varsa Mesaj :)</legend>
+		<input type="text" class="form-control" id="quantity" name="" placeholder="Aşk Yani Love">
+<br>
+<button type="button" id="insert" class="btn btn-success">Ekle</button>
+
+<button type="button" id="create" class="btn btn-success">Tablo Oluştur</button>
+
+<button type="button" id="remove" class="btn btn-danger">Tabloyu Sil</button>
+
+<button type="button" id="list" class="btn btn-success">Bilgileri Getir</button>
+	</fieldset>
+</form>
+
+<hr>
+<h4>Linkler</h4>
+<table class="table table-bordered table-hover" id="itemlist">
+	
+</table>
+
+
+
+
+</div>
+
+</div>
+
+
+
+<script type="text/javascript">
+// Import the functions you need from the SDKs you need
+import { initializeApp } from "firebase/app";
+// TODO: Add SDKs for Firebase products that you want to use
+// https://firebase.google.com/docs/web/setup#available-libraries
+
+// Your web app's Firebase configuration
+const firebaseConfig = {
+  apiKey: "AIzaSyBRtAmdg5iVKwswFjpQEjw73cthsVAFwPA",
+  authDomain: "ilayda-ed388.firebaseapp.com",
+  dataBaseURL: "https://ilayda-ed388-default-rtdb.europe-west1.firebasedatabase.app",
+  projectId: "ilayda-ed388",
+  storageBucket: "ilayda-ed388.appspot.com",
+  messagingSenderId: "442113532110",
+  appId: "1:442113532110:web:d924b104431a37bc9c309f"
+};
+
+// Initialize Firebase
+const app = initializeApp(firebaseConfig);
+// Initialize Realtime Database and get a reference to the service
+const database = getDatabase(app);
+
+var ref = database.ref("scores");
+
+var data = {
+	name: "DTS",
+	score: 42
+}
+ref.push(data);
+
+
+
+</script>
+
+
+</body>
+</html>
