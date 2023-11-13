@@ -21,6 +21,7 @@ body {
   height: 100%;
   position: relative;
 }
+#map { height: 850px;}
 
 a {
   color: #8C7676;
