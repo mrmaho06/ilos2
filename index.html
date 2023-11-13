@@ -48,6 +48,13 @@
 	<!-- Style -->
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/gunluk.css">
+	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
+	integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
+	crossorigin=""/>
+	 <!-- Make sure you put this AFTER Leaflet's CSS -->
+	 <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js"
+     integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo="
+     crossorigin=""></script>
 
 	
 
@@ -160,6 +167,46 @@
 			<div class="row">
 				<div class="col-md-12 section-heading text-center">
 					<h2 class="to-animate">Dünyanın 8. Harikası:</h2>
+					<div id="map"></div>
+					<script>
+					var map = L.map('map').setView([42.4412, 19.2623], 5);
+
+L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+	attribution: '© OpenStreetMap contributors'
+}).addTo(map);
+
+var places = [
+	{ name: 'Karadağ Kotor', location: [42.4247, 18.7712], image: 'images/kotor.jpeg' },
+	//{ name: 'Sırbistan Novi Sad', location: [45.2671, 19.8335], image: 'path/to/novi_sad.jpg' },
+	{ name: 'Makedonya Üsküp', location: [42.0032, 21.4524], image: 'images/makedonya.jpeg' },
+	{ name: 'Bosna-Hersek Saraybosna', location: [43.8563, 18.4131], image: 'images/saraybosna.jpeg' },
+	{ name: 'Türkiye Beypazarı', location: [40.1682, 31.9153], image: 'images/beypazari.jpeg' },
+	{ name: 'Türkiye Aydın Didim', location: [37.3814, 27.268], image: 'images/didim.jpeg' },
+	{ name: 'Türkiye İzmir Çandarlı', location: [38.9542, 26.9839], image: 'images/candarli.jpeg' },
+	{ name: 'Türkiye Aydın Didim', location: [37.3814, 27.268], image: 'images/didim.jpeg' },
+	{ name: 'Bolu Gölcük Milli Parkı', location: [40.7407, 31.7054], image: 'images/bolu.jpeg' },
+    { name: 'Cunda Adası', location: [39.4894, 26.9754], image: 'images/cunda.jpeg' },
+    { name: 'Eskişehir Balmumu Müzesi', location: [39.7662, 30.5256], image: 'images/eskisehir.jpeg' },
+    { name: 'Hacettepe Üniversitesi Beytepe Kampüsü Heykel', location: [39.9334, 32.8597], image: 'images/hacettepe-heykel.jpeg' },
+    { name: 'If Sokak Tunus Caddesi Ankara', location: [39.9076, 32.8641], image: 'images/iftunus.jpeg' },
+    { name: 'İstanbul', location: [41.0082, 28.9784], image: 'images/istanbul.jpeg' },
+    { name: 'Trabzon Kalesi', location: [41.0015, 39.7170], image: 'images/trabzon.jpeg' },
+	{ name: 'Ankara Cumhurbaşkanlığı Senfoni Orkestrası Sıhhıye', location: [39.9208, 32.8541], image: 'images/cso.jpeg' },
+    { name: 'Niğde Koyunlu Köyü', location: [37.9664, 34.6737], image: 'images/nigde-koyunlu.jpeg' },
+    { name: 'Ankara Çayyolu Mondrian Sanat Akademisi', location: [39.8997, 32.8413], image: 'images/mondrian-snt.jpeg' },
+    { name: 'Ankara Batıkent Atlantis AVM', location: [39.9881, 32.7318], image: 'images/atlantis.jpeg' },
+    { name: 'Sırbistan Özgürlük Heykeli', location: [44.7866, 20.4489], image: 'images/sirbistan-church.jpeg' },
+    { name: 'Sırbistan Novi Sad Şehri', location: [45.2671, 19.8335], image: 'images/sirbistan.jpeg' },
+];
+
+places.forEach(function (place) {
+	var marker = L.marker(place.location).addTo(map);
+	marker.bindPopup(`
+		<h3>${place.name}</h3>
+		<img src="${place.image}" alt="${place.name}" style="width: 200px; height: auto;">
+	`);
+});
+</script>
 					
 					
 					<div class="row">
