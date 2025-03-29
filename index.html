@@ -49,6 +49,7 @@
 	<!-- Style -->
 	<link rel="stylesheet" href="css/style.css">
 	<link rel="stylesheet" href="css/gunluk.css">
+	<link rel="stylesheet" href="css/kustun-mu.css">
 	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css"
 	integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY="
 	crossorigin=""/>
@@ -835,31 +836,28 @@ places.forEach(function (place) {
 					</div>
 					
 				</div>
-				<div class="container">
-					<h3>Küstün mü?</h3>
-					<div class="buttons">
-						<button id="evet">Evet</button>
-						<button id="hayir">Hayır</button>
-					</div>
-				</div>
-			
-				<script>
-					const evetButton = document.getElementById("evet");
-					const hayirButton = document.getElementById("hayir");
-			
-					evetButton.addEventListener("mouseenter", () => {
-						const x = Math.random() * (window.innerWidth - evetButton.offsetWidth);
-						const y = Math.random() * (window.innerHeight - evetButton.offsetHeight);
-						evetButton.style.left = `${x}px`;
-						evetButton.style.top = `${y}px`;
-					});
-			
-					hayirButton.addEventListener("click", () => {
-						alert("Tamam, barıştık!");
-					});
-				</script>
 			</div>	
 		</div>
+	</section>
+
+	<section>
+		<div>
+			<div class="unique-container">
+				<h1 class="unique-title">Küstün mü?</h1>
+				<div class="unique-button-container">
+					<button id="evetButton" class="unique-button">Evet</button>
+					<button id="hayirButton" class="unique-button">Hayır</button>
+				</div>
+			</div>
+			<!-- Modal -->
+			<div id="popupModal" class="popup-modal">
+				<div class="popup-content">
+					<span id="closePopup" class="close">&times;</span>
+					<img src="img/kedi.png" alt="Resim" class="popup-image">
+					<p style="color: black;">Tamam o zaman 🙃</p>
+				</div>
+			</div>
+	</div>
 	</section>
 	
 	
@@ -1019,6 +1017,8 @@ setInterval(my_function,10000);
 	<!--Timeline JS File-->
 	<script src="js/gunluk.js"></script>
 	<script src="js/swiper.js"></script>
+	<!--küstün mü scripti-->
+	<script src="js/kustun-mu.js"></script>
 
 	</body>
 </html>
