@@ -1905,3 +1905,13 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 50%;
   filter: drop-shadow(0 0 10px white);
 }
+
+#evet {
+  background-color: red;
+  color: white;
+  position: absolute;
+}
+#hayir {
+  background-color: green;
+  color: white;
+}

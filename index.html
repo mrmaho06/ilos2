@@ -835,6 +835,29 @@ places.forEach(function (place) {
 					</div>
 					
 				</div>
+				<div class="container">
+					<h3>Küstün mü?</h3>
+					<div class="buttons">
+						<button id="evet">Evet</button>
+						<button id="hayir">Hayır</button>
+					</div>
+				</div>
+			
+				<script>
+					const evetButton = document.getElementById("evet");
+					const hayirButton = document.getElementById("hayir");
+			
+					evetButton.addEventListener("mouseenter", () => {
+						const x = Math.random() * (window.innerWidth - evetButton.offsetWidth);
+						const y = Math.random() * (window.innerHeight - evetButton.offsetHeight);
+						evetButton.style.left = `${x}px`;
+						evetButton.style.top = `${y}px`;
+					});
+			
+					hayirButton.addEventListener("click", () => {
+						alert("Tamam, barıştık!");
+					});
+				</script>
 			</div>	
 		</div>
 	</section>
