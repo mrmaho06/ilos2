@@ -271,9 +271,15 @@
 		<div class="container">
 			<div class="row">
 				<div class="col-md-12 text-center">
-					<div alt="ilayda nur tekeli" class="project-grid to-animate-2"
-						style="background-image:  url(images/project-1.jpg);">
-						<div class="desc">
+					<div alt="ilayda nur tekeli" class="project-grid to-animate-2 video-thumbnail" id="video-project-1"
+						style="position: relative; overflow: hidden;">
+						<img src="images/project-1.jpg" alt="Cover" class="video-cover-img"
+							style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; transition: opacity 0.5s ease;">
+						<video class="project-video" muted loop playsinline
+							style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 0;">
+							<source src="video/ilos_portre.mp4" type="video/mp4">
+						</video>
+						<div class="desc" style="position: relative; z-index: 2;">
 							<h3>05.05.1997</h3>
 							<span>:)</span>
 						</div>
@@ -316,6 +322,38 @@
 							<div class="desc">
 								<h3>Batıkent</h3>
 								<span>29.01.2022</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 text-center">
+						<div class="project-grid to-animate-2" style="background-image:  url(images/s1.jpeg);">
+							<div class="desc">
+								<h3>Düğüncülük</h3>
+								<span>17.11.2022</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 text-center">
+						<div class="project-grid to-animate-2" style="background-image:  url(images/alanyafoto.jpeg);">
+							<div class="desc">
+								<h3>Kızlarla Alanya Hatırası</h3>
+								<span>21.06.2024</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 text-center">
+						<div class="project-grid to-animate-2" style="background-image:  url(images/efesfoto.jpeg);">
+							<div class="desc">
+								<h3>Efes Antik Kenti</h3>
+								<span>10.09.2024</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-12 text-center">
+						<div class="project-grid to-animate-2" style="background-image:  url(images/kpdk.jpeg);">
+							<div class="desc">
+								<h3>Kapadokya</h3>
+								<span>28.10.2024</span>
 							</div>
 						</div>
 					</div>
@@ -1215,15 +1253,15 @@
 			<div class="row">
 				<div class="col-md-3">
 					<div class="team-box text-center to-animate-2">
-						<div class="user"><img class="img-reponsive" src="images/user-1.jpg" alt="Roger Garfield"></div>
-						<h3>Zülal Şeyma Görür</h3>
+						<div class="user"><img class="img-reponsive" src="images/ceydos.png" alt="Roger Garfield"></div>
+						<h3>Ceyda Erkan </h3>
 						<span class="position"></span>
-						<p>Akrep burcu ama yılan. Şu ana kadar gelmiş geçmiş en iyi GPS satıcısı.</p>
-						<ul class="social-media">
-						</ul>
-					</div>
-				</div>
+						<p>Bonnyfoodlarımı her zaman onunla paylaşırım. Ağız şapırdatmamı en çok seven kankam.
 
+						</p>
+					</div>
+
+				</div>
 				<div class="col-md-3">
 					<div class="team-box text-center to-animate-2">
 						<div class="user"><img class="img-reponsive" src="images/user-2.jpg" alt="Roger Garfield"></div>
@@ -1234,17 +1272,16 @@
 						</ul>
 					</div>
 				</div>
-
 				<div class="col-md-3">
 					<div class="team-box text-center to-animate-2">
-						<div class="user"><img class="img-reponsive" src="images/ceydos.png" alt="Roger Garfield"></div>
-						<h3>Ceyda Erkan </h3>
+						<div class="user"><img class="img-reponsive" src="images/ezgi.jpg" alt="Roger Garfield"></div>
+						<h3>Ezgi İrem Koç</h3>
 						<span class="position"></span>
-						<p>Bonnyfoodlarımı her zaman onunla paylaşırım. Ağız şapırdatmamı en çok seven kankam.
-
+						<p>Bölümde sevmezmiş, şimdi yanımdan ayrılmıyor. Ben bu dünyaya onun ömrünü törpülemeye geldim.
 						</p>
+						<ul class="social-media">
+						</ul>
 					</div>
-
 				</div>
 				<div class="col-md-3">
 					<div class="team-box text-center to-animate-2">
@@ -1394,6 +1431,36 @@
 <script src="js/swiper.js"></script>
 <!--küstün mü scripti-->
 <script src="js/kustun-mu.js"></script>
+
+<!-- Video Thumbnail Autoplay Script -->
+<script>
+	document.addEventListener('DOMContentLoaded', function () {
+		const videoThumbnail = document.getElementById('video-project-1');
+		const video = videoThumbnail.querySelector('.project-video');
+		const coverImg = videoThumbnail.querySelector('.video-cover-img');
+
+		// Intersection Observer ile thumbnail görünür olduğunda tespit et
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting && !video.hasAttribute('data-played')) {
+					// 1.5 saniye bekle
+					setTimeout(() => {
+						// Resmi fade out yap
+						coverImg.style.opacity = '0';
+						// Videoyu oynat
+						video.play();
+						// Bir kez oynatıldığını işaretle
+						video.setAttribute('data-played', 'true');
+					}, 1500); // 1500ms = 1.5 saniye
+				}
+			});
+		}, {
+			threshold: 0.5 // %50'si görünür olduğunda tetikle
+		});
+
+		observer.observe(videoThumbnail);
+	});
+</script>
 
 </body>
 
