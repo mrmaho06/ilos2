@@ -1241,7 +1241,7 @@
 														<a href="" class="timeline-content">
 															<div class="timeline-year">29 Haziran</div>
 															<p class="description">
-																Aman Aman nerelere geldik. <br>(Eğer 15 Haziran 2026 tarihinden önce bu yazı
+																Aman Aman nerelere geldik. <br>(Eğer 22 Haziran 2026 tarihinden önce bu yazı
 																görülürse 1 gram altın hediye...)<br><br><br>
 															</p>
 
@@ -1512,6 +1512,152 @@
 		});
 
 		observer.observe(videoThumbnail);
+	});
+</script>
+
+<!-- Yemek Menüsü Popup -->
+<div id="menu-popup" class="menu-popup-overlay">
+	<div class="menu-popup-container">
+		<button id="menu-popup-close" class="menu-popup-close-btn" aria-label="Kapat">&times;</button>
+		<img src="yemek-menusu.png" alt="Yemek Menüsü" class="menu-popup-image">
+	</div>
+</div>
+
+<style>
+	/* Popup overlay styling */
+	.menu-popup-overlay {
+		position: fixed;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-color: rgba(0, 0, 0, 0.75);
+		backdrop-filter: blur(8px);
+		-webkit-backdrop-filter: blur(8px);
+		z-index: 999999; /* Ensure it is on top of everything, including navigation */
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		opacity: 0;
+		visibility: hidden;
+		transition: opacity 0.4s ease, visibility 0.4s ease;
+	}
+
+	.menu-popup-overlay.active {
+		opacity: 1;
+		visibility: visible;
+	}
+
+	/* Container for the menu and close button */
+	.menu-popup-container {
+		position: relative;
+		max-width: 90%;
+		max-height: 90%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		transform: scale(0.9);
+		transition: transform 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+	}
+
+	.menu-popup-overlay.active .menu-popup-container {
+		transform: scale(1);
+	}
+
+	/* Image styling */
+	.menu-popup-image {
+		max-width: 100%;
+		max-height: 85vh;
+		border-radius: 12px;
+		box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+		border: 3px solid rgba(255, 255, 255, 0.15);
+		object-fit: contain;
+	}
+
+	/* Premium Close Button */
+	.menu-popup-close-btn {
+		position: absolute;
+		top: -20px;
+		right: -20px;
+		width: 44px;
+		height: 44px;
+		border-radius: 50%;
+		background: rgba(255, 255, 255, 0.2);
+		border: 2px solid rgba(255, 255, 255, 0.4);
+		color: #fff;
+		font-size: 28px;
+		line-height: 1;
+		cursor: pointer;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		backdrop-filter: blur(5px);
+		-webkit-backdrop-filter: blur(5px);
+		transition: all 0.3s ease;
+		box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+		padding: 0;
+		z-index: 1000000;
+	}
+
+	.menu-popup-close-btn:hover {
+		background: rgba(255, 255, 255, 0.9);
+		color: #333;
+		transform: rotate(90deg) scale(1.1);
+		border-color: #fff;
+	}
+
+	/* Responsive adjustment for close button on small mobile screens */
+	@media (max-width: 768px) {
+		.menu-popup-close-btn {
+			top: 10px;
+			right: 10px;
+			width: 36px;
+			height: 36px;
+			font-size: 22px;
+			background: rgba(0, 0, 0, 0.5);
+			border-color: rgba(255, 255, 255, 0.3);
+		}
+		.menu-popup-close-btn:hover {
+			background: rgba(255, 255, 255, 0.9);
+			color: #333;
+		}
+	}
+</style>
+
+<script>
+	document.addEventListener("DOMContentLoaded", function() {
+		var popup = document.getElementById("menu-popup");
+		var closeBtn = document.getElementById("menu-popup-close");
+
+		if (popup && closeBtn) {
+			// Show the popup with a tiny delay for smooth animation
+			setTimeout(function() {
+				popup.classList.add("active");
+				document.body.style.overflow = "hidden"; // Prevent background scroll
+			}, 300);
+
+			// Close when clicking close button
+			closeBtn.addEventListener("click", closePopup);
+
+			// Close when clicking outside the container (on the overlay)
+			popup.addEventListener("click", function(e) {
+				if (e.target === popup) {
+					closePopup();
+				}
+			});
+
+			// Close on ESC key press
+			document.addEventListener("keydown", function(e) {
+				if (e.key === "Escape" && popup.classList.contains("active")) {
+					closePopup();
+				}
+			});
+
+			function closePopup() {
+				popup.classList.remove("active");
+				document.body.style.overflow = ""; // Restore background scroll
+			}
+		}
 	});
 </script>
 
